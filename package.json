@@ -1,0 +1,11 @@
+{
+  "name": "brain-games-s388",
+  "version": "0.0.1",
+  "description": "A console minigame - hexlet.io lvl 1 project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Kim",
+  "license": "ISC"
+}
