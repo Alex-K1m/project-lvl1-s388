@@ -2,7 +2,6 @@
   "name": "brain-games-s388",
   "version": "0.0.1",
   "description": "A console minigame - hexlet.io lvl 1 project",
-  "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
@@ -14,6 +13,13 @@
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "game",
+    "brain",
+    "logic",
+    "console",
+    "hexlet"
+  ],
   "author": "Alex Kim",
   "license": "ISC",
   "devDependencies": {
