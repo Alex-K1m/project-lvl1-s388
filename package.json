@@ -28,5 +28,8 @@
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.1.6",
     "cross-env": "^5.2.0"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.9"
   }
 }
