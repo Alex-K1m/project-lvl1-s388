@@ -3,4 +3,4 @@
 
 # Brain games - hexlet.io project #1
 
-*Description coming soon.*
+[![asciicast](https://asciinema.org/a/EOqRzUOzuM1IS1RDreDMyEbcn.svg)](https://asciinema.org/a/EOqRzUOzuM1IS1RDreDMyEbcn)
