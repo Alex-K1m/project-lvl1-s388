@@ -1,6 +1,6 @@
 {
   "name": "brain-games-s388",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A console minigame - hexlet.io lvl 1 project",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
