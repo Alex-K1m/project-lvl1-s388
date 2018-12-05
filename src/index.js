@@ -1,5 +1,9 @@
 import readlineSync from 'readline-sync';
 
+// numbers for questions are generated randomly from [1; MAX_NUMBER]
+const MAX_NUMBER = 100;
+const NUM_OF_CORRECT_ANSWERS = 3; // to win the game
+
 const greeting = () => {
   console.log(
     `---------------------------
@@ -12,9 +16,6 @@ Welcome to the Brain Games!
 };
 
 const startBrainEven = () => {
-  // numbers for questions are generated randomly from [1; MAX_NUMBER]
-  const MAX_NUMBER = 100;
-  const NUM_OF_CORRECT_ANSWERS = 3; // to win the game
   let number;
   let isEven;
   let answer;
