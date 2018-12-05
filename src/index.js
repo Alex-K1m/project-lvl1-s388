@@ -15,8 +15,9 @@ Welcome to the Brain Games!
   return userName;
 };
 
+const isEven = num => num % 2 === 0;
+
 const startBrainEven = () => {
-  let isEven;
   let answer;
   let correctCounter = 0;
   const userName = greeting();
@@ -26,17 +27,16 @@ const startBrainEven = () => {
   console.log('Answer "yes" if a number is even, otherwise answer "no".');
   while (correctCounter < NUM_OF_CORRECT_ANSWERS) {
     const question = generateNum();
-    isEven = question % 2 === 0;
     console.log(`Question: ${question}`);
     answer = readlineSync.question('Your answer: ');
-    if ((isEven && answer === 'yes')
-    || (!isEven && answer === 'no')) {
+    if ((isEven(question) && answer === 'yes')
+      || (!isEven(question) && answer === 'no')) {
       console.log('Correct!');
       correctCounter += 1;
     } else {
       console.log(
         `"${answer}" is the wrong answer.`,
-        `The correct answer is "${isEven ? 'yes' : 'no'}".`,
+        `The correct answer is "${isEven(question) ? 'yes' : 'no'}".`,
       );
       console.log(`Let's try again, ${userName}!`);
       return;
