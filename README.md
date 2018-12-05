@@ -3,4 +3,10 @@
 
 # Brain games - hexlet.io project #1
 
+## Brain-even mini game
+
 [![asciicast](https://asciinema.org/a/EOqRzUOzuM1IS1RDreDMyEbcn.svg)](https://asciinema.org/a/EOqRzUOzuM1IS1RDreDMyEbcn)
+
+## Brain-calc min game
+
+[![asciicast](https://asciinema.org/a/aSniOpvww61TtFAYIQ6P4IC7I.svg)](https://asciinema.org/a/aSniOpvww61TtFAYIQ6P4IC7I)
