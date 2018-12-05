@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import { greeting, startBrainEven } from '..';
+import { startBrainEven } from '..';
 
-greeting();
 startBrainEven();

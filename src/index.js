@@ -1,15 +1,14 @@
 import readlineSync from 'readline-sync';
 
-let userName = '';
-
 const greeting = () => {
   console.log(
     `---------------------------
 Welcome to the Brain Games!
 ---------------------------`,
   );
-  userName = readlineSync.question('May i have your name? ');
+  const userName = readlineSync.question('May i have your name? ');
   console.log(`Hello, ${userName}!`);
+  return userName;
 };
 
 const startBrainEven = () => {
@@ -20,6 +19,7 @@ const startBrainEven = () => {
   let isEven;
   let answer;
   let correctCounter = 0;
+  const userName = greeting();
 
   const generateNum = () => Math.ceil(Math.random() * MAX_NUMBER);
 
