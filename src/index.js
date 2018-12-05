@@ -1,8 +1,6 @@
 import readlineSync from 'readline-sync';
 
-// numbers for questions are generated randomly from [1; MAX_NUMBER]
-const MAX_NUMBER = 100;
-const NUM_OF_CORRECT_ANSWERS = 3; // to win the game
+const NUM_OF_ROUNDS = 3; // to win the game
 
 const greeting = () => {
   console.log(
@@ -15,29 +13,23 @@ Welcome to the Brain Games!
   return userName;
 };
 
-const generateNum = () => Math.ceil(Math.random() * MAX_NUMBER);
-
-const isEven = num => num % 2 === 0;
-
-const startBrainEven = () => {
+const startGame = (game) => {
   const userName = greeting();
-
-  console.log('Answer "yes" if a number is even, otherwise answer "no".');
+  console.log(game.task);
 
   for (let correctCounter = 0;
-    correctCounter < NUM_OF_CORRECT_ANSWERS;
+    correctCounter < NUM_OF_ROUNDS;
     correctCounter += 1) {
-    const question = generateNum();
-    console.log(`Question: ${question}`);
+    const round = game.newRound();
+    console.log(`Question: ${round.question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    const correctAnswer = isEven(question) ? 'yes' : 'no';
 
-    if (correctAnswer === userAnswer) {
+    if (round.correctAnswer === userAnswer) {
       console.log('Correct!');
     } else {
       console.log(
         `"${userAnswer}" is the wrong answer.`,
-        `The correct answer is "${correctAnswer}".`,
+        `The correct answer is "${round.correctAnswer}".`,
       );
       console.log(`Let's try again, ${userName}!`);
       return;
@@ -46,4 +38,4 @@ const startBrainEven = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export { greeting, startBrainEven };
+export { greeting, startGame };
