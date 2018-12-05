@@ -22,15 +22,13 @@ const startBrainEven = () => {
   let correctCounter = 0;
 
   const generateNum = () => Math.ceil(Math.random() * MAX_NUMBER);
-  const ask = num => console.log(`Question: ${num}`);
-  const getAnswer = () => readlineSync.question('Your answer: ');
 
   console.log('Answer "yes" if a number is even, otherwise answer "no".');
   while (correctCounter < NUM_OF_CORRECT_ANSWERS) {
     number = generateNum();
     isEven = number % 2 === 0;
-    ask(number);
-    answer = getAnswer();
+    console.log(`Question: ${number}`);
+    answer = readlineSync.question('Your answer: ');
     if ((isEven && answer === 'yes')
     || (!isEven && answer === 'no')) {
       console.log('Correct!');
