@@ -44,3 +44,5 @@ To start the game use
 ```
 brain-gcd
 ```
+
+[![asciicast](https://asciinema.org/a/sytNIIR4QRd4hALTCul35iMAN.svg)](https://asciinema.org/a/sytNIIR4QRd4hALTCul35iMAN)
