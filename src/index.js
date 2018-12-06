@@ -13,14 +13,14 @@ Welcome to the Brain Games!
   return userName;
 };
 
-const startGame = (game) => {
+const startGame = (task, newRound) => {
   const userName = greeting();
-  console.log(game.task);
+  console.log(task);
 
   for (let correctCounter = 0;
     correctCounter < NUM_OF_ROUNDS;
     correctCounter += 1) {
-    const round = game.newRound();
+    const round = newRound();
     console.log(`Question: ${round.question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 

@@ -1,4 +1,4 @@
-import generateNum from './utils';
+import generateNum from '../utils';
 import { startGame } from '..';
 
 const PROGRESSION_LENGTH = 10;
@@ -6,6 +6,7 @@ const MIN_STEP = 2;
 const MAX_STEP = 20;
 
 const task = 'What number is missing in the progression?';
+
 const generateProgression = () => {
   const progression = [generateNum()];
   const step = generateNum(MIN_STEP, MAX_STEP);
@@ -14,6 +15,7 @@ const generateProgression = () => {
   }
   return progression;
 };
+
 const newRound = () => {
   const progression = generateProgression();
   const randomIndex = generateNum(0, progression.length - 1);
@@ -24,4 +26,4 @@ const newRound = () => {
   return { question, correctAnswer };
 };
 
-export default () => startGame({ task, newRound });
+export default () => startGame(task, newRound);
