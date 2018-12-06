@@ -46,3 +46,12 @@ brain-gcd
 ```
 
 [![asciicast](https://asciinema.org/a/sytNIIR4QRd4hALTCul35iMAN.svg)](https://asciinema.org/a/sytNIIR4QRd4hALTCul35iMAN)
+
+### Arithmetic progression
+
+Determine what number is skipped in the given series of numbers representing an arithmetic progression and type it in.
+
+To start the game use
+```
+brain-progression
+```
