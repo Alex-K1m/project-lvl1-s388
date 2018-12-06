@@ -14,7 +14,7 @@ const calculate = (operation, num1, num2) => {
 const newRound = () => {
   const num1 = generateNum();
   const num2 = generateNum();
-  const operation = operations[Math.floor(Math.random() * operations.length)];
+  const operation = operations[generateNum(0, operations.length - 1)];
 
   const question = `${num1} ${operation} ${num2}`;
   const correctAnswer = `${calculate(operation, num1, num2)}`;
