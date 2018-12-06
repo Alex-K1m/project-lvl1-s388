@@ -20,16 +20,16 @@ const startGame = (task, newRound) => {
   for (let correctCounter = 0;
     correctCounter < NUM_OF_ROUNDS;
     correctCounter += 1) {
-    const round = newRound();
-    console.log(`Question: ${round.question}`);
+    const { question, correctAnswer } = newRound();
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (round.correctAnswer === userAnswer) {
+    if (correctAnswer === userAnswer) {
       console.log('Correct!');
     } else {
       console.log(
         `"${userAnswer}" is the wrong answer.`,
-        `The correct answer is "${round.correctAnswer}".`,
+        `The correct answer is "${correctAnswer}".`,
       );
       console.log(`Let's try again, ${userName}!`);
       return;
