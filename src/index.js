@@ -28,4 +28,4 @@ const startGame = (task, newRound) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export { greeting, startGame };
+export default startGame;
