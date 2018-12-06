@@ -1,5 +1,5 @@
 import generateNum from '../utils';
-import { startGame } from '..';
+import startGame from '..';
 
 const operations = ['+', '-', '*'];
 

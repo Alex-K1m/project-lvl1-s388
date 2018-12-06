@@ -1,5 +1,5 @@
 import generateNum from '../utils';
-import { startGame } from '..';
+import startGame from '..';
 
 const PROGRESSION_LENGTH = 10;
 const MIN_STEP = 2;
