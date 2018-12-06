@@ -55,3 +55,5 @@ To start the game use
 ```
 brain-progression
 ```
+
+[![asciicast](https://asciinema.org/a/SP5SeXtD0EHl7WfWjQ1VRvYg3.svg)](https://asciinema.org/a/SP5SeXtD0EHl7WfWjQ1VRvYg3)
