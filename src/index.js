@@ -1,14 +1,14 @@
 import readlineSync from 'readline-sync';
 import greeting from './greeting';
 
-const NUM_OF_ROUNDS = 3; // to win the game
+const numOfRounds = 3; // to win the game
 
 export default (task, newRound) => {
   const userName = greeting();
   console.log(task);
 
   for (let correctCounter = 0;
-    correctCounter < NUM_OF_ROUNDS;
+    correctCounter < numOfRounds;
     correctCounter += 1) {
     const { question, correctAnswer } = newRound();
     console.log(`Question: ${question}`);
