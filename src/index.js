@@ -17,10 +17,8 @@ export default (task, newRound) => {
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(
-        `"${userAnswer}" is the wrong answer.`,
-        `The correct answer is "${correctAnswer}".`,
-      );
+      console.log(`"${userAnswer}" is the wrong answer.`);
+      console.log(`The correct answer is "${correctAnswer}".`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
