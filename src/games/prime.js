@@ -4,10 +4,11 @@ import startGame from '..';
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
-  for (let i = 2; i <= Math.sqrt(num); i += 1) {
-    if (num % i === 0) return false;
+  const n = Math.abs(num);
+  for (let i = 2; i <= Math.sqrt(n); i += 1) {
+    if (n % i === 0) return false;
   }
-  return num !== 1 && num !== 0;
+  return n !== 1 && n !== 0;
 };
 
 const newRound = () => {
