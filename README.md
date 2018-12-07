@@ -66,3 +66,5 @@ To start the game use
 ```
 brain-prime
 ```
+
+[![asciicast](https://asciinema.org/a/5ICYT4ikPv38s8y4HDReptv7c.svg)](https://asciinema.org/a/5ICYT4ikPv38s8y4HDReptv7c)
