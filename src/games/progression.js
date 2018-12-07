@@ -7,9 +7,9 @@ const maxStep = 20;
 
 const task = 'What number is missing in the progression?';
 
-const generateProgression = (firstElement, step) => {
+const generateProgression = (firstElement, step, length) => {
   const progression = [];
-  for (let i = 0; i < progressionLength; i += 1) {
+  for (let i = 0; i < length; i += 1) {
     progression.push(firstElement + step * i);
   }
   return progression;
@@ -19,6 +19,7 @@ const newRound = () => {
   const progression = generateProgression(
     generateNum(),
     generateNum(minStep, maxStep),
+    progressionLength,
   );
   const randomIndex = generateNum(0, progression.length - 1);
   const correctAnswer = `${progression[randomIndex]}`;
