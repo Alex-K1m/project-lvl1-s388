@@ -16,6 +16,9 @@ startGcd:
 startProg:
 	npx babel-node -- src/bin/brain-progression.js
 
+startPrime:
+	npx babel-node -- src/bin/brain-prime.js
+
 build:
 	npm run build
 
