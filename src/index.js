@@ -3,7 +3,7 @@ import greeting from './greeting';
 
 const numOfRounds = 3; // to win the game
 
-export default (task, newRound) => {
+const startGame = (task, newRound) => {
   const userName = greeting();
   console.log(task);
 
@@ -25,3 +25,5 @@ export default (task, newRound) => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
+
+export default startGame;

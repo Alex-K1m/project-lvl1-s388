@@ -17,4 +17,6 @@ const newRound = () => {
   return { question, correctAnswer };
 };
 
-export default () => startGame(task, newRound);
+const brainPrime = () => startGame(task, newRound);
+
+export default brainPrime;

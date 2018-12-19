@@ -25,4 +25,6 @@ const newRound = () => {
   return { question, correctAnswer };
 };
 
-export default () => startGame(task, newRound);
+const brainCalc = () => startGame(task, newRound);
+
+export default brainCalc;

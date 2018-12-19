@@ -11,4 +11,6 @@ const newRound = () => {
   return { question, correctAnswer };
 };
 
-export default () => startGame(task, newRound);
+const brainEven = () => startGame(task, newRound);
+
+export default brainEven;

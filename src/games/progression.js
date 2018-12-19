@@ -28,4 +28,6 @@ const newRound = () => {
   return { question, correctAnswer };
 };
 
-export default () => startGame(task, newRound);
+const brainProgression = () => startGame(task, newRound);
+
+export default brainProgression;
