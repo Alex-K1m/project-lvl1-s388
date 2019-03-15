@@ -1,29 +1,34 @@
-import readlineSync from 'readline-sync';
+import { keyInSelect } from 'readline-sync';
 import greeting from './greeting';
+import brainEven from './games/even';
+import brainCalc from './games/calc';
+import brainGcd from './games/gcd';
+import brainPrime from './games/prime';
+import brainProg from './games/progression';
 
-const numOfRounds = 3; // to win the game
-
-const startGame = (task, newRound) => {
-  const userName = greeting();
-  console.log(task);
-
-  for (let correctCounter = 0;
-    correctCounter < numOfRounds;
-    correctCounter += 1) {
-    const { question, correctAnswer } = newRound();
-    console.log(`Question: ${question}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-
-    if (correctAnswer === userAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`"${userAnswer}" is the wrong answer.`);
-      console.log(`The correct answer is "${correctAnswer}".`);
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
+const play = () => {
+  const games = ['Even', 'Calc', 'GCD', 'Prime', 'Progression'];
+  const index = keyInSelect(games, 'Choose a game');
+  switch (index) {
+    case 0: brainEven(); break;
+    case 1: brainCalc(); break;
+    case 2: brainGcd(); break;
+    case 3: brainPrime(); break;
+    case 4: brainProg(); break;
+    default: console.log('default switch in play():', index);
   }
-  console.log(`Congratulations, ${userName}!`);
 };
 
-export default startGame;
+const run = () => {
+  greeting();
+  while (true) {
+    const index = keyInSelect(['Play', 'Quit'], 'MENU');
+    switch (index) {
+      case 0: play(); break;
+      case 1: return;
+      default: console.log('default switch in run():', index); return;
+    }
+  }
+};
+
+export default run;

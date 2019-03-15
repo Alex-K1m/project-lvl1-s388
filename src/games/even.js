@@ -1,5 +1,5 @@
 import generateNum from '../utils';
-import startGame from '..';
+import startGame from '../engine';
 
 const task = 'Answer "yes" if a number is even, otherwise answer "no".';
 
