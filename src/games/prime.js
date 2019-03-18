@@ -1,7 +1,6 @@
 import generateNum from '../utils';
-import startGame from '../engine';
 
-const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num <= 1) return false;
@@ -17,6 +16,4 @@ const newRound = () => {
   return { question, correctAnswer };
 };
 
-const brainPrime = () => startGame(task, newRound);
-
-export default brainPrime;
+export default { description, newRound };

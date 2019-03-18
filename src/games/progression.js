@@ -1,11 +1,10 @@
 import generateNum from '../utils';
-import startGame from '../engine';
 
 const progressionLength = 10;
 const minStep = 2;
 const maxStep = 20;
 
-const task = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 const generateProgression = (firstElement, step, length) => {
   const progression = [];
@@ -28,6 +27,4 @@ const newRound = () => {
   return { question, correctAnswer };
 };
 
-const brainProgression = () => startGame(task, newRound);
-
-export default brainProgression;
+export default { description, newRound };

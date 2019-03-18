@@ -1,9 +1,8 @@
 import generateNum from '../utils';
-import startGame from '../engine';
 
 const operations = ['+', '-', '*'];
 
-const task = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const calculate = (operation, num1, num2) => {
   switch (operation) {
@@ -25,6 +24,4 @@ const newRound = () => {
   return { question, correctAnswer };
 };
 
-const brainCalc = () => startGame(task, newRound);
-
-export default brainCalc;
+export default { description, newRound };

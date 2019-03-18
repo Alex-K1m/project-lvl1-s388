@@ -1,31 +1,32 @@
 import { keyInSelect } from 'readline-sync';
 import greeting from './greeting';
-import brainEven from './games/even';
-import brainCalc from './games/calc';
-import brainGcd from './games/gcd';
-import brainPrime from './games/prime';
-import brainProg from './games/progression';
+import * as games from './games';
+import startGame from './engine';
 
-const play = () => {
-  const games = ['Even', 'Calc', 'GCD', 'Prime', 'Progression'];
-  const index = keyInSelect(games, 'Choose a game');
-  switch (index) {
-    case 0: brainEven(); break;
-    case 1: brainCalc(); break;
-    case 2: brainGcd(); break;
-    case 3: brainPrime(); break;
-    case 4: brainProg(); break;
-    default: console.log('default switch in play():', index);
+const play = (userName) => {
+  const names = Object.keys(games);
+  for (;;) {
+    console.log('Choose a game to play:');
+    const index = keyInSelect(names, '', { guide: false, cancel: 'Go back' });
+    if (index === -1) {
+      return;
+    }
+    startGame(games[names[index]], userName);
   }
 };
 
 const run = () => {
-  greeting();
-  while (true) {
-    const index = keyInSelect(['Play', 'Quit'], 'MENU');
+  const userName = greeting();
+  for (;;) {
+    console.log('MAIN MENU');
+    const index = keyInSelect(
+      ['Play'],
+      '',
+      { guide: false, cancel: 'Quit' },
+    );
     switch (index) {
-      case 0: play(); break;
-      case 1: return;
+      case -1: return;
+      case 0: play(userName); break;
       default: console.log('default switch in run():', index); return;
     }
   }

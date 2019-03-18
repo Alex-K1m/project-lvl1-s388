@@ -2,9 +2,8 @@ import readlineSync from 'readline-sync';
 
 const numOfRounds = 3; // to win the game
 
-const startGame = (task, newRound) => {
-  const userName = 'Alex';
-  console.log(task);
+const startGame = ({ description, newRound }, userName) => {
+  console.log(description);
   for (let correctCounter = 0;
     correctCounter < numOfRounds;
     correctCounter += 1) {

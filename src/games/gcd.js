@@ -1,7 +1,6 @@
 import generateNum from '../utils';
-import startGame from '../engine';
 
-const task = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const findGcd = (num1, num2) => {
   if (num2 === 0) return num1;
@@ -18,6 +17,4 @@ const newRound = () => {
   return { question, correctAnswer };
 };
 
-const brainGcd = () => startGame(task, newRound);
-
-export default brainGcd;
+export default { description, newRound };
