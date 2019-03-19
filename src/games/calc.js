@@ -2,6 +2,8 @@ import generateNum from '../utils';
 
 const operations = ['+', '-', '*'];
 
+const name = 'Calculator';
+
 const description = 'What is the result of the expression?';
 
 const calculate = (operation, num1, num2) => {
@@ -18,10 +20,10 @@ const newRound = () => {
   const num2 = generateNum();
   const operation = operations[generateNum(0, operations.length - 1)];
 
-  const question = `${num1} ${operation} ${num2}`;
+  const task = `${num1} ${operation} ${num2}`;
   const correctAnswer = `${calculate(operation, num1, num2)}`;
 
-  return { question, correctAnswer };
+  return { task, correctAnswer };
 };
 
-export default { description, newRound };
+export default { name, description, newRound };

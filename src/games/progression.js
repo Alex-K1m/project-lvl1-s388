@@ -4,6 +4,8 @@ const progressionLength = 10;
 const minStep = 2;
 const maxStep = 20;
 
+const name = 'Progression';
+
 const description = 'What number is missing in the progression?';
 
 const generateProgression = (firstElement, step, length) => {
@@ -23,8 +25,8 @@ const newRound = () => {
   const randomIndex = generateNum(0, progression.length - 1);
   const correctAnswer = `${progression[randomIndex]}`;
   progression[randomIndex] = '..';
-  const question = progression.join(' ');
-  return { question, correctAnswer };
+  const task = progression.join(' ');
+  return { task, correctAnswer };
 };
 
-export default { description, newRound };
+export default { name, description, newRound };

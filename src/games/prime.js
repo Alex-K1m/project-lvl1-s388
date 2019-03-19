@@ -1,5 +1,7 @@
 import generateNum from '../utils';
 
+const name = 'Prime or Not';
+
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
@@ -11,9 +13,9 @@ const isPrime = (num) => {
 };
 
 const newRound = () => {
-  const question = generateNum();
-  const correctAnswer = isPrime(question) ? 'yes' : 'no';
-  return { question, correctAnswer };
+  const task = generateNum();
+  const correctAnswer = isPrime(task);
+  return { task, correctAnswer };
 };
 
-export default { description, newRound };
+export default { name, description, newRound };

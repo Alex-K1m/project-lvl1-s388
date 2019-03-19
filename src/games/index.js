@@ -1,5 +1,5 @@
-export { default as brainEven } from './even';
-export { default as brainCalc } from './calc';
-export { default as brainGcd } from './gcd';
-export { default as brainPrime } from './prime';
-export { default as brainProg } from './progression';
+export { default as Even } from './even';
+export { default as Calc } from './calc';
+export { default as Gcd } from './gcd';
+export { default as Prime } from './prime';
+export { default as Prog } from './progression';

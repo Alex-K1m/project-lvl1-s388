@@ -1,26 +1,31 @@
-import readlineSync from 'readline-sync';
+import { question, keyInYNStrict } from 'readline-sync';
 
 const numOfRounds = 3; // to win the game
 
-const startGame = ({ description, newRound }, userName) => {
-  console.log(description);
+const startGame = (gameData, userName) => {
+  const { name, description, newRound } = gameData;
+
+  console.log(`\n${name.toUpperCase()}`);
+  console.log(`${description}`);
+
   for (let correctCounter = 0;
     correctCounter < numOfRounds;
     correctCounter += 1) {
-    const { question, correctAnswer } = newRound();
-    console.log(`Question: ${question}`);
-    const userAnswer = readlineSync.question('Your answer: ');
+    const { task, correctAnswer } = newRound();
+
+    console.log(`\nCurrent task: ${task}`);
+    const userAnswer = typeof correctAnswer === 'boolean'
+      ? keyInYNStrict('Your answer') : question('Your answer: ');
 
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`"${userAnswer}" is the wrong answer.`);
-      console.log(`The correct answer is "${correctAnswer}".`);
-      console.log(`Let's try again, ${userName}!`);
+      console.log(`Wrong. The correct answer is "${correctAnswer}".`);
+      console.log(`\nLet's try again, ${userName}!`);
       return;
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+  console.log(`\nCongratulations, ${userName}!`);
 };
 
 export default startGame;

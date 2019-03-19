@@ -1,5 +1,7 @@
 import generateNum from '../utils';
 
+const name = 'Greatest common divisor';
+
 const description = 'Find the greatest common divisor of given numbers.';
 
 const findGcd = (num1, num2) => {
@@ -11,10 +13,10 @@ const newRound = () => {
   const num1 = generateNum();
   const num2 = generateNum();
 
-  const question = `${num1} ${num2}`;
+  const task = `${num1} ${num2}`;
   const correctAnswer = `${findGcd(num1, num2)}`;
 
-  return { question, correctAnswer };
+  return { task, correctAnswer };
 };
 
-export default { description, newRound };
+export default { name, description, newRound };

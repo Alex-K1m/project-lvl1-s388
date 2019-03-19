@@ -1,24 +1,30 @@
-import { keyInSelect } from 'readline-sync';
-import greeting from './greeting';
+import { question, keyInSelect } from 'readline-sync';
 import * as games from './games';
 import startGame from './engine';
 
 const play = (userName) => {
-  const names = Object.keys(games);
+  const keys = Object.keys(games);
+  const names = keys.map(key => games[key].name);
   for (;;) {
-    console.log('Choose a game to play:');
+    console.log('\nChoose a game to play:');
     const index = keyInSelect(names, '', { guide: false, cancel: 'Go back' });
     if (index === -1) {
       return;
     }
-    startGame(games[names[index]], userName);
+    startGame(games[keys[index]], userName);
   }
 };
 
 const run = () => {
-  const userName = greeting();
+  console.log(
+    '===========================',
+    '\nWelcome to the Brain Games!',
+    '\n===========================',
+  );
+  const userName = question('Enter your name: ');
+
   for (;;) {
-    console.log('MAIN MENU');
+    console.log('\nMENU:');
     const index = keyInSelect(
       ['Play'],
       '',

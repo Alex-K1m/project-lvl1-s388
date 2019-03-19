@@ -1,13 +1,15 @@
 import generateNum from '../utils';
 
+const name = 'Even or Not';
+
 const description = 'Answer "yes" if a number is even, otherwise answer "no".';
 
 const isEven = num => num % 2 === 0;
 
 const newRound = () => {
-  const question = generateNum();
-  const correctAnswer = isEven(question) ? 'yes' : 'no';
-  return { question, correctAnswer };
+  const task = generateNum();
+  const correctAnswer = isEven(task);
+  return { task, correctAnswer };
 };
 
-export default { description, newRound };
+export default { name, description, newRound };
