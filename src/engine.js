@@ -1,8 +1,12 @@
 import { question, keyInYNStrict } from 'readline-sync';
 
-const numOfRounds = 3; // to win the game
+const format = (value) => {
+  if (value === true) return 'yes';
+  if (value === false) return 'no';
+  return value;
+};
 
-const startGame = (gameData, userName) => {
+const startGame = (gameData, userName, numOfRounds = 3) => {
   const { name, description, newRound } = gameData;
 
   console.log(`\n${name.toUpperCase()}`);
@@ -20,8 +24,8 @@ const startGame = (gameData, userName) => {
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`Wrong. The correct answer is "${correctAnswer}".`);
-      console.log(`\nLet's try again, ${userName}!`);
+      console.log(`Wrong. The correct answer is "${format(correctAnswer)}".`);
+      console.log(`\nGood luck next time, ${userName}!`);
       return;
     }
   }

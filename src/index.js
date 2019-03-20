@@ -1,17 +1,19 @@
-import { question, keyInSelect } from 'readline-sync';
+import { question, keyInSelect, keyInYNStrict } from 'readline-sync';
 import * as games from './games';
 import startGame from './engine';
 
 const play = (userName) => {
   const keys = Object.keys(games);
   const names = keys.map(key => games[key].name);
+
   for (;;) {
     console.log('\nChoose a game to play:');
     const index = keyInSelect(names, '', { guide: false, cancel: 'Go back' });
-    if (index === -1) {
-      return;
+    if (index === -1) return;
+    for (;;) {
+      startGame(games[keys[index]], userName);
+      if (!keyInYNStrict('Play again? ')) break;
     }
-    startGame(games[keys[index]], userName);
   }
 };
 
@@ -31,9 +33,8 @@ const run = () => {
       { guide: false, cancel: 'Quit' },
     );
     switch (index) {
-      case -1: return;
       case 0: play(userName); break;
-      default: console.log('default switch in run():', index); return;
+      default: return;
     }
   }
 };
