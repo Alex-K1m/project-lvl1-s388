@@ -8,7 +8,7 @@ const name = 'Progression';
 
 const description = 'What number is missing in the progression?';
 
-const generateProgression = (firstElement, step, length) => {
+export const generateProgression = (firstElement, step, length) => {
   const progression = [];
   for (let i = 0; i < length; i += 1) {
     progression.push(firstElement + step * i);

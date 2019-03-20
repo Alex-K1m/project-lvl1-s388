@@ -4,7 +4,7 @@ const name = 'Even or Not';
 
 const description = 'Answer "yes" if a number is even, otherwise answer "no".';
 
-const isEven = num => num % 2 === 0;
+export const isEven = num => num % 2 === 0;
 
 const newRound = () => {
   const task = generateNum();

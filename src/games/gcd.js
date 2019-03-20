@@ -4,7 +4,7 @@ const name = 'Greatest common divisor';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const findGcd = (num1, num2) => {
+export const findGcd = (num1, num2) => {
   if (num2 === 0) return num1;
   return findGcd(num2, num1 % num2);
 };
