@@ -11,7 +11,12 @@ const play = (userName) => {
     const index = keyInSelect(names, '', { guide: false, cancel: 'Go back' });
     if (index === -1) return;
     for (;;) {
-      startGame(games[keys[index]], userName);
+      const completed = startGame(games[keys[index]]);
+      if (completed) {
+        console.log(`\nCongratulations, ${userName}!`);
+      } else {
+        console.log(`\nGood luck next time, ${userName}!`);
+      }
       if (!keyInYNStrict('Play again? ')) break;
     }
   }
