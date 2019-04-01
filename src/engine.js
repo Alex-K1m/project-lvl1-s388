@@ -6,7 +6,7 @@ const format = (value) => {
   return value;
 };
 
-const startGame = (gameData, userName, numOfRounds = 3) => {
+const startGame = (gameData, numOfRounds = 3) => {
   const { name, description, newRound } = gameData;
 
   console.log(`\n${name.toUpperCase()}`);
@@ -25,11 +25,10 @@ const startGame = (gameData, userName, numOfRounds = 3) => {
       console.log('Correct!');
     } else {
       console.log(`Wrong. The correct answer is "${format(correctAnswer)}".`);
-      console.log(`\nGood luck next time, ${userName}!`);
-      return;
+      return false;
     }
   }
-  console.log(`\nCongratulations, ${userName}!`);
+  return true;
 };
 
 export default startGame;
