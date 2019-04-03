@@ -22,6 +22,25 @@ const play = (userName) => {
   }
 };
 
+const playChallenge = (userName) => {
+  const keys = Object.keys(games);
+  const numOfRounds = 3;
+  let time = 0;
+
+  for (let i = 0; i < numOfRounds; i += 1) {
+    const index = Math.floor(Math.random() * keys.length);
+    const startTime = Date.now();
+    const completed = startGame(games[keys[index]], 1);
+    if (!completed) {
+      console.log(`\nGood luck next time, ${userName}!`);
+      return;
+    }
+    time += Date.now() - startTime;
+  }
+  console.log(`\nCongratulations, ${userName}!`);
+  console.log(`You've compeleted the challenge in ${time} ms`);
+};
+
 const run = () => {
   console.log(
     '===========================',
@@ -33,12 +52,13 @@ const run = () => {
   for (;;) {
     console.log('\nMENU:');
     const index = keyInSelect(
-      ['Play'],
+      ['Play', 'Challenge'],
       '',
       { guide: false, cancel: 'Quit' },
     );
     switch (index) {
       case 0: play(userName); break;
+      case 1: playChallenge(userName); break;
       default: return;
     }
   }
